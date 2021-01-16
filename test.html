@@ -1,31 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let window = new window
+    console.log(this);
+    console.log(window);
+  </script>
 </head>
 <body>
-
-    <script>
-function NewObject(name, color) {
-  this.name = name
-  this.color = color
-  this.isWindow = function() {
-    console.log()
-  }
-}
-
-const newObj = new NewObject('nana', 'yellow')
-console.log(newObj.name) // nana
-console.log(newObj.color) // yellow
-console.log(newObj.isWindow()) // false
-
-const newObj2 = new NewObject('didi', 'red')
-console.log(newObj2.name) // didi
-console.log(newObj2.color) // red
-console.log(newObj2.isWindow()) // false
-
-    </script>
 </body>
 </html>
