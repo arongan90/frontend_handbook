@@ -1,5 +1,3 @@
-# 인터뷰 면접 상세설명
-
 
 ## Event Delegation
 ___

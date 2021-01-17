@@ -92,3 +92,6 @@ ___
 그럼 비동기가 처리되는 과정을 살펴봅시다. 우선 버튼 클릭과 같은 이벤트가 발생하면 DOM 이벤트, http 요청, setTimeout 등과 같은 비동기 함수는 C++로 구현된 web API를 호출하며, web API는 콜백 함수를 이벤트 큐(콜백 큐)에 밀어 넣습니다. 그럼 이벤트 큐는 대기하다가 스택이 텅 비는 시점에 이벤트 루프를 돌리게 됩니다(스택에 넣음). 이벤트 루프의 기본 역할은 큐와 스택, 두 부분을 지켜보다가 스택이 비는 시점에 콜백을 실행시켜 주는 것. 각 메시지와 콜백은 다른 메시지가 처리되기 전에 완전히 처리됩니다.
 
 웹 브라우저에서는 이벤트가 발생할 때마다 메시지가 추가되고 이벤트 리스너가 첨부됩니다. 따라서 리스너가 없으면 이벤트가 손실됩니다. 콜백 함수의 호출은 호출 스택의 초기 프레임으로 사용되며, 자바스크립트가 싱글 스레드이므로 스택에 대한 모든 호출이 반환될 때까지 메세지 폴링(polling) 및 처리가 중지됩니다. 동기식 함수 호출은 이와 반대로 새 호출 프레임을 스택에 추가합니다.
+
+
+[싸이클 테스트 사이트](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
